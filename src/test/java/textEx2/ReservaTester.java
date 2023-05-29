@@ -37,6 +37,8 @@ public class ReservaTester {
                     "La Paz, 2, 29, 05, 2023,El dia Lunes 29 de Mayo 2023 existen 2 pasajes para La Paz",
                     "Tarija, 1, 30, 05, 2023,No existen suficientes pasajes para Tarija",
                     "La Paz, 3, 31, 05, 2023,El dia Miercoles 31 de Mayo 2023 existen 3 pasajes para La Paz",
+                    "Santa Cruz, 4, 19, 11, 20,El dia Viernes 19 de Noviembre 20 existen 4 pasajes para Santa Cruz",
+                    "La Paz, 3, 31, 05, 2023,El dia Miercoles 31 de Mayo 2023 existen 3 pasajes para La Paz",
 
 
             }
@@ -64,7 +66,6 @@ public class ReservaTester {
 
         ReservaClase reservaClase= new ReservaClase();
         reservaClase.setReservService(serviceMock);
-
         Assertions.assertThrows(Exception.class,()->reservaClase.reservaVuelo(destino,pasajes,dia,mes,gestion));
 
     }

@@ -11,11 +11,12 @@ public class ReservaClase {
 
     public String reservaVuelo(String destino, int cantidad, int dia, int mes, int gestion) throws Exception {
         String out="";
+        if ((mes<1 || mes>12)||(dia<1 || dia>31) || (gestion<0 || gestion>9999)){
+            throw new Exception("El numero asignado para la fecha esta incorrecto");
+        }
         if (reservService.existePasajes(cantidad,destino)){
             String dayStr=reservService.getDay(dia,mes,gestion);
-            if ((mes<1 || mes>12)||(dia<1 || dia>31) || (gestion<0 || gestion>9999)){
-                throw new Exception("El numero asignado para la fecha esta incorrecto");
-            }
+
             String dateSent=dia+"/"+mes+"/"+gestion;
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
             Date convertedVer=null;
